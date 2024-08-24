@@ -1,5 +1,5 @@
 //This program takes input string and sends each character through the LED (OOK - ASCII encoding)
-//Uncomment the first line of the loop function and comment out the second line to run the code.
+//Comment out digitalWrite(LED_PIN, LOW) in loop() function to run.
 
 #define LED_PIN 11
 #define PERIOD 20//MAKE SURE THIS IS SAME AS RECEIVER

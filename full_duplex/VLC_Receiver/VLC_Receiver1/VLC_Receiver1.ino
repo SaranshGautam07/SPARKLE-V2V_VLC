@@ -31,12 +31,7 @@ void loop()
 {
   //digitalWrite(5, HIGH);
   current_state = get_ldr();
-  
-  /*if(current_state && !previous_state)//if previous state = 0 and current state = 1, then we start timer
-  {
-    t1 = millis();//measure the time at a rising edge
-  }*/
-  
+   
   if(!current_state && previous_state)//if previous state = 1 and current state = 0, then we start detecting character
   {
     //t2 = millis();//measure the time at a falling edge
@@ -44,15 +39,6 @@ void loop()
     //elapsedTime = t2 - t1;//measures time difference between a rising edge and a falling edge
     c1 = get_byte();
     print_byte(c1);
-    /*if(elapsedTime >= 900)//if time diff greater than 900ms, it means we have now started to receive a fresh message signal
-    {
-      clearfunc();//Clear the LCD screen and add a newline to serial monitor for the new Message signal
-    }
-    
-    else
-    {
-      print_byte(c1);//else print the character to LCD screen and on the serial monitor
-    }*/
   }
   previous_state = current_state;
 }
